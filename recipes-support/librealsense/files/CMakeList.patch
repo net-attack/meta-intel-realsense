@@ -1,0 +1,12 @@
+--- a/CMakeLists.txt      2020-02-24 18:04:55.682351900 +0100
++++ b/CMakeLists.txt     2020-02-24 18:05:51.952775600 +0100
+@@ -185,8 +185,8 @@
+       set(CMAKE_C_FLAGS   "${CMAKE_C_FLAGS}   -mstrict-align -ftree-vectorize")
+       set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mstrict-align -ftree-vectorize")
+     else(${MACHINE} MATCHES "arm-linux-gnueabihf")
+-      set(CMAKE_C_FLAGS   "${CMAKE_C_FLAGS}   -mssse3")
+-      set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mssse3")
++      set(CMAKE_C_FLAGS   "${CMAKE_C_FLAGS}")
++      set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+     endif(${MACHINE} MATCHES "arm-linux-gnueabihf")
+ endif()
