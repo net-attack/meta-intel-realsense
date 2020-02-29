@@ -12,5 +12,5 @@ SRC_URI = "\
 
 S = "${WORKDIR}/git"
 
-require librealsense-common.inc
+#require librealsense-common.inc
 require librealsense.inc
