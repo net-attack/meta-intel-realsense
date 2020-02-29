@@ -1,4 +1,4 @@
-FILESEXTRAPATHS_prepend := "${THISDIR}/linux-yocto:"
+FILESEXTRAPATHS_prepend := "${THISDIR}/linux-raspberrypi:"
 
 SRC_URI += "file://uvc.cfg"
 SRC_URI += "file://realsense_hid_4.19.patch"
