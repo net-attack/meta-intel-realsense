@@ -1,6 +1,8 @@
---- a/CMakeLists.txt      2020-02-24 18:04:55.682351900 +0100
-+++ b/CMakeLists.txt     2020-02-24 18:05:51.952775600 +0100
-@@ -185,8 +185,8 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index d6ed86e1..e86fc933 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -185,8 +185,8 @@ if(UNIX)
        set(CMAKE_C_FLAGS   "${CMAKE_C_FLAGS}   -mstrict-align -ftree-vectorize")
        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mstrict-align -ftree-vectorize")
      else(${MACHINE} MATCHES "arm-linux-gnueabihf")
@@ -10,3 +12,29 @@
 +      set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
      endif(${MACHINE} MATCHES "arm-linux-gnueabihf")
  endif()
+ 
+diff --git a/src/types.h b/src/types.h
+index 0455c836..a964bf3e 100644
+--- a/src/types.h
++++ b/src/types.h
+@@ -22,6 +22,7 @@
+ #include <atomic>
+ #include <map>          
+ #include <algorithm>
++#include <functional>
+ 
+ const uint8_t RS_STREAM_NATIVE_COUNT    = 5;
+ const int RS_USER_QUEUE_SIZE = 20;
+diff --git a/src/uvc-v4l2.cpp b/src/uvc-v4l2.cpp
+index e97dfdab..d368aaa3 100644
+--- a/src/uvc-v4l2.cpp
++++ b/src/uvc-v4l2.cpp
+@@ -33,7 +33,7 @@
+ #include <linux/usb/video.h>
+ #include <linux/uvcvideo.h>
+ #include <linux/videodev2.h>
+-
++#include <sys/sysmacros.h>
+ #pragma GCC diagnostic ignored "-Wpedantic"
+ #include <libusb.h>
+ #pragma GCC diagnostic pop
